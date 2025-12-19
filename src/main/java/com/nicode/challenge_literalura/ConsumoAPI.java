@@ -9,7 +9,6 @@ public class ConsumoAPI {
     private static final HttpClient client = HttpClient.newHttpClient();
     private static final String URL_BASE = "https://gutendex.com";
 
-
     public static String obtenerDatos(String urlEndpoint) {
         String urlCompleta = URL_BASE + urlEndpoint;
 
