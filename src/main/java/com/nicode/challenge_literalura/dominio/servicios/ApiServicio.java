@@ -1,29 +1,31 @@
-package com.nicode.challenge_literalura;
+package com.nicode.challenge_literalura.dominio.servicios;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class ConsumoAPI {
-    private static final HttpClient client = HttpClient.newHttpClient();
-    private static final String URL_BASE = "https://gutendex.com";
+public class ApiServicio {
+    private HttpClient client = HttpClient.newHttpClient();
+    private String URL_BASE = "https://gutendex.com";
 
-    public static String obtenerDatos(String urlEndpoint) {
-        String urlCompleta = URL_BASE + urlEndpoint;
+    public String obtenerDatos(String urlEndpoint) {
+        URI direccion = URI.create(URL_BASE + urlEndpoint);
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(urlCompleta))
+                .uri(direccion)
                 .build();
 
         HttpResponse<String> response;
 
         try {
             response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (Exception e) {
+        }catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
 
         return response.body();
     }
+
 }
