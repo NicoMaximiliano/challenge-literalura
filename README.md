@@ -48,22 +48,22 @@ LiterAlura es un programa de linea de comandos que consume los datos de la API G
 ## Capturas del proyecto
 ---
 ### Menu principal
-![Menu principal](assets/screenshots/1_Menu_principal.jpg)
+![Menu principal](src/main/resources/assets/screenshots/1_Menu_principal.jpg)
 
 ### Buscando libro por titulo
-![Opcion 1](assets/screenshots/2_Buscar_libro_por_titulo.jpg)
+![Opcion 1](src/main/resources/assets/screenshots/2_Buscar_libro_por_titulo.jpg)
 
 ### Listando libros ya registrados en la base de datos
-![Opcion 2](assets/screenshots/3_Listar_libros_registrados.jpg)
+![Opcion 2](src/main/resources/assets/screenshots/3_Listar_libros_registrados.jpg)
 
 ### Listando autores ya registrados en la base de datos
-![Opcion 3](assets/screenshots/4_Listar_autores_registrados.jpg)
+![Opcion 3](src/main/resources/assets/screenshots/4_Listar_autores_registrados.jpg)
 
 ### Listando autores que se encuentran vivos en un determinado año
-![Opcion 4](assets/screenshots/5_Listar_autores_vivos_en_determinado_año.jpg)
+![Opcion 4](src/main/resources/assets/screenshots/5_Listar_autores_vivos_en_determinado_año.jpg)
 
 ### Listando libros por idioma
-![Opcion 5](assets/screenshots/6_Listar_libros_por_idioma.jpg)
+![Opcion 5](src/main/resources/assets/screenshots/6_Listar_libros_por_idioma.jpg)
 
 ### Terminando la ejecucion del programa
 ![Opcion 6](assets/screenshots/7_Terminar_programa.jpg)
