@@ -1,20 +1,20 @@
 package com.nicode.challenge_literalura.dominio.servicios;
 
+import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+@Service
 public class ApiServicio {
-    private HttpClient client = HttpClient.newHttpClient();
-    private String URL_BASE = "https://gutendex.com";
+    private final HttpClient client = HttpClient.newHttpClient();
 
-    public String obtenerDatos(String urlEndpoint) {
-        URI direccion = URI.create(URL_BASE + urlEndpoint);
-
+    public String obtenerDatos(String dir) {
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(direccion)
+                .uri(URI.create(dir))
                 .build();
 
         HttpResponse<String> response;
@@ -27,5 +27,4 @@ public class ApiServicio {
 
         return response.body();
     }
-
 }

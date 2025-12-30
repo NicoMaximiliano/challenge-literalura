@@ -1,9 +1,7 @@
 package com.nicode.challenge_literalura.persistencia.entidades;
 
-import com.nicode.challenge_literalura.dominio.dtos.LibroDTO;
+import com.nicode.challenge_literalura.dominio.dtos.LibroDto;
 import jakarta.persistence.*;
-
-import java.util.List;
 
 @Entity
 @Table(name = "libros")
@@ -11,24 +9,26 @@ public class Libro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    @Column(name = "id_libro")
+    private Long id;
 
-    String titulo;
+    private String titulo;
 
-    String idiomas;
+    private String idioma;
 
-    Long numDescargas;
+    private Long numDescargas;
 
     @ManyToOne
-    Autor autor;
+    @JoinColumn(name = "id_autor")
+    private Autor autor;
 
     public Libro() {
     }
 
-    public Libro(LibroDTO libroDTO) {
-        this.titulo = libroDTO.titulo();
-        this.idiomas = libroDTO.idiomas();
-        this.numDescargas = libroDTO.numDescargas();
+    public Libro(LibroDto libroDto) {
+        this.titulo = libroDto.getTitulo();
+        this.idioma = libroDto.getIdioma();
+        this.numDescargas = libroDto.getNumDescargas();
     }
 
     public Long getId() {
@@ -55,12 +55,12 @@ public class Libro {
         this.autor = autor;
     }
 
-    public String getIdiomas() {
-        return idiomas;
+    public String getIdioma() {
+        return idioma;
     }
 
-    public void setIdiomas(String idiomas) {
-        this.idiomas = idiomas;
+    public void setIdioma(String idioma) {
+        this.idioma = idioma;
     }
 
     public Long getNumDescargas() {
@@ -70,6 +70,4 @@ public class Libro {
     public void setNumDescargas(Long numDescargas) {
         this.numDescargas = numDescargas;
     }
-
-
 }

@@ -1,6 +1,6 @@
 package com.nicode.challenge_literalura.persistencia.entidades;
 
-import com.nicode.challenge_literalura.dominio.dtos.AutorDTO;
+import com.nicode.challenge_literalura.dominio.dtos.AutorDto;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -11,24 +11,25 @@ public class Autor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    @Column(name = "id_autor")
+    private Long id;
 
-    String nombre;
+    private String nombre;
 
-    Integer fecha_nacimiento;
+    private Integer fecha_nacimiento;
 
-    Integer fecha_fallecimiento;
+    private Integer fecha_fallecimiento;
 
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    List<Libro> libros;
+    private List<Libro> libros;
 
     public Autor() {
     }
 
-    public Autor(AutorDTO autorDTO) {
-        this.nombre = autorDTO.nombre();
-        this.fecha_nacimiento = autorDTO.fecha_nacimiento();
-        this.fecha_fallecimiento = autorDTO.fecha_fallecimiento();
+    public Autor(AutorDto autorDto) {
+        this.nombre = autorDto.getNombre();
+        this.fecha_nacimiento = autorDto.getFecha_nacimiento();
+        this.fecha_fallecimiento = autorDto.getFecha_fallecimiento();
     }
 
     public Long getId() {
@@ -70,6 +71,4 @@ public class Autor {
     public void setLibros(List<Libro> libros) {
         this.libros = libros;
     }
-
-
 }
