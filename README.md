@@ -66,7 +66,7 @@ LiterAlura es un programa de linea de comandos que consume los datos de la API G
 ![Opcion 5](src/main/resources/assets/screenshots/6_Listar_libros_por_idioma.jpg)
 
 ### Terminando la ejecucion del programa
-![Opcion 6](assets/screenshots/7_Terminar_programa.jpg)
+![Opcion 6](src/main/resources/assets/screenshots/7_Terminar_programa.jpg)
 
 ## Tecnologias
 ---
